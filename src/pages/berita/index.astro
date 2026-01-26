@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Berita from "../../components/Berita";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("berita");
+// Sort by date, newest first
+const sortedPosts = allPosts.sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<Layout>
+    <Berita posts={sortedPosts} client:load />
+</Layout>

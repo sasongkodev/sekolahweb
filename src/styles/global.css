@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Define animations using standard CSS */
+@keyframes slow-zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes fade-in-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Create utility classes manually to avoid @theme compatibility issues */
+.animate-slow-zoom {
+    animation: slow-zoom 20s infinite alternate;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 1s ease-out forwards;
+}

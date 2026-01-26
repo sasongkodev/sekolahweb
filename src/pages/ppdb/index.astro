@@ -1,0 +1,18 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/ppdb/Hero";
+import Requirements from "../../components/ppdb/Requirements";
+import Flow from "../../components/ppdb/Flow";
+import FAQ from "../../components/ppdb/FAQ";
+import Contact from "../../components/ppdb/Contact";
+---
+
+<Layout title="PPDB - Penerimaan Peserta Didik Baru">
+    <main>
+        <Hero client:load />
+        <Requirements client:visible />
+        <Flow client:visible />
+        <FAQ client:visible />
+        <Contact client:visible />
+    </main>
+</Layout>
