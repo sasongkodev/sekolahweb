@@ -14,9 +14,9 @@ export default function Footer() {
                     <div className="space-y-6">
                         <div className="flex items-center gap-3">
                             <img
-                                src="/src/assets/logo.png"
+                                src="/logo.png"
                                 alt="Logo SMA Insan Cendekia"
-                                className="w-12 h-12 object-contain brightness-0 invert"
+                                className="w-12 h-12 object-contain"
                             />
                             <div className="flex flex-col">
                                 <span className="text-xl font-bold tracking-tight text-white leading-tight">
