@@ -71,7 +71,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <a href="/" className="flex items-center gap-3 group">
                         <img
-                            src="/src/assets/logo.png"
+                            src="/logo.png"
                             alt="Logo"
                             className="w-10 h-10 object-contain drop-shadow-sm"
                         />
