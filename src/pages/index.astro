@@ -1,10 +1,23 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero";
+import HomeCarousel from "../components/HomeCarousel";
+import HomeAbout from "../components/HomeAbout";
+import HomeBerita from "../components/HomeBerita";
+import { getCollection } from "astro:content";
+
+const allPosts = await getCollection("berita");
+const latestPosts = allPosts
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
-<Layout>
-	<!-- Hero Section -->
-	<!-- Hero Section -->
-	<Hero client:load />
+<Layout title="Beranda - SMA Insan Cendekia">
+	<!-- Hero Carousel Section -->
+	<HomeCarousel client:load />
+
+	<!-- About Section -->
+	<HomeAbout client:load />
+
+	<!-- Latest News Section -->
+	<HomeBerita posts={latestPosts} client:visible />
 </Layout>

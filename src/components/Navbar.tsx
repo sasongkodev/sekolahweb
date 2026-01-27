@@ -63,7 +63,7 @@ const Navbar = () => {
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
                 ? "bg-[#123C69] shadow-lg text-white"
-                : "bg-transparent text-white bg-gradient-to-b from-black/50 to-transparent"
+                : "bg-[#123C69] text-white"
                 }`}
         >
             <div className="container mx-auto px-4 lg:px-8">

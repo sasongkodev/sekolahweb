@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/kontak/Hero";
+import ContactForm from "../../components/kontak/ContactForm";
+import ContactInfo from "../../components/kontak/ContactInfo";
+import MapSection from "../../components/kontak/MapSection";
+import FAQ from "../../components/kontak/FAQ";
+---
+
+<Layout title="Kontak - SMA Insan Cendekia">
+    <main>
+        <Hero client:load />
+        <div id="contact-form">
+            <ContactForm client:visible />
+        </div>
+        <ContactInfo client:visible />
+        <MapSection client:visible />
+        <FAQ client:visible />
+    </main>
+</Layout>
