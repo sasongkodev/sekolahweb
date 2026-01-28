@@ -86,7 +86,7 @@ const Navbar = () => {
                     </a>
 
                     {/* Desktop Menu */}
-                    <nav className="hidden lg:flex items-center gap-1">
+                    <nav className="hidden xl:flex items-center gap-1">
                         {NAV_ITEMS.map((item) => (
                             <div
                                 key={item.label}
@@ -156,7 +156,7 @@ const Navbar = () => {
 
                     {/* Mobile Toggle */}
                     <button
-                        className="lg:hidden p-2 rounded-md focus:outline-none"
+                        className="xl:hidden p-2 rounded-md focus:outline-none"
                         onClick={() => setMobileOpen(!mobileOpen)}
                         aria-label="Toggle Menu"
                     >
@@ -171,7 +171,7 @@ const Navbar = () => {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-300 ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+                className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-40 xl:hidden transition-opacity duration-300 ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
                 onClick={() => setMobileOpen(false)}
             />
 

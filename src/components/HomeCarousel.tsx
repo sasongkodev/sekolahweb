@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 // Using the existing hero image for all slides for now, but with different overlays/text
 // In a real scenario, we'd import 5 different images
-import heroImage from "../assets/hero.jpg";
+const imagesGlob = import.meta.glob<{ default: ImageMetadata }>('../assets/*.{jpg,jpeg,png,webp}', { eager: true });
+
+// Filter out logo and get image sources
+const imageSources = Object.entries(imagesGlob)
+    .filter(([path]) => !path.toLowerCase().includes('logo'))
+    .map(([, module]) => module.default.src);
 
 const SLIDES = [
     {
         id: 1,
-        image: heroImage.src,
+        image: imageSources[0] || imageSources[0], // fallback
         title: "Selamat Datang di",
         highlight: "SMA Insan Cendekia",
         description: "Membentuk Generasi Berilmu, Berkarakter, dan Berprestasi",
@@ -16,7 +21,7 @@ const SLIDES = [
     },
     {
         id: 2,
-        image: heroImage.src, // Placeholder image
+        image: imageSources[1] || imageSources[0],
         title: "Prestasi",
         highlight: "Tingkat Nasional",
         description: "Meraih Medali Emas Olimpiade Sains Nasional 2024",
@@ -26,7 +31,7 @@ const SLIDES = [
     },
     {
         id: 3,
-        image: heroImage.src, // Placeholder image
+        image: imageSources[2] || imageSources[0],
         title: "Lingkungan Belajar",
         highlight: "Modern & Nyaman",
         description: "Fasilitas lengkap mendukung pengembangan potensi siswa",
@@ -36,7 +41,7 @@ const SLIDES = [
     },
     {
         id: 4,
-        image: heroImage.src, // Placeholder image
+        image: imageSources[3] || imageSources[0],
         title: "Program Unggulan",
         highlight: "Tahfidz Al-Qur'an",
         description: "Mencetak generasi penghafal Al-Qur'an yang cerdas akademik",
@@ -46,7 +51,7 @@ const SLIDES = [
     },
     {
         id: 5,
-        image: heroImage.src, // Placeholder image
+        image: imageSources[4] || imageSources[0],
         title: "Penerimaan Siswa Baru",
         highlight: "Tahun Ajaran 2025/2026",
         description: "Bergabunglah menjadi bagian dari keluarga besar Insan Cendekia",
@@ -103,9 +108,9 @@ const HomeCarousel = () => {
                             <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium tracking-wider uppercase mb-2">
                                 {/* Dynamic dot color based on slide */}
                                 <span className={`inline-block w-2 h-2 rounded-full mr-2 ${slide.color === "blue" ? "bg-blue-400" :
-                                        slide.color === "yellow" ? "bg-yellow-400" :
-                                            slide.color === "green" ? "bg-green-400" :
-                                                slide.color === "emerald" ? "bg-emerald-400" : "bg-red-400"
+                                    slide.color === "yellow" ? "bg-yellow-400" :
+                                        slide.color === "green" ? "bg-green-400" :
+                                            slide.color === "emerald" ? "bg-emerald-400" : "bg-red-400"
                                     }`}></span>
                                 {slide.title}
                             </div>
@@ -141,8 +146,8 @@ const HomeCarousel = () => {
                         key={index}
                         onClick={() => setCurrentSlide(index)}
                         className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                                ? "bg-white w-10"
-                                : "bg-white/40 hover:bg-white/60"
+                            ? "bg-white w-10"
+                            : "bg-white/40 hover:bg-white/60"
                             }`}
                         aria-label={`Go to slide ${index + 1}`}
                     />

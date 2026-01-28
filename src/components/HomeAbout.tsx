@@ -1,4 +1,4 @@
-import React from 'react';
+import sekolahImage from '../assets/sekolah.jpg';
 
 const HomeAbout = () => {
     return (
@@ -16,11 +16,16 @@ const HomeAbout = () => {
                             <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
 
                             <div className="relative bg-white p-2 rounded-2xl shadow-xl transform rotate-2 hover:rotate-0 transition-transform duration-500 cursor-pointer">
-                                <div className="aspect-[4/3] bg-gradient-to-br from-[#123C69] to-blue-800 rounded-xl overflow-hidden flex items-center justify-center text-white">
-                                    {/* Placeholder for actual school image */}
-                                    <div className="text-center p-8">
-                                        <h3 className="text-3xl font-bold mb-2">SMA Insan Cendekia</h3>
-                                        <p className="text-blue-200">School of Leaders</p>
+                                <div className="aspect-[4/3] bg-gradient-to-br from-[#123C69] to-blue-800 rounded-xl overflow-hidden flex items-center justify-center text-white relative group">
+                                    <img
+                                        src={sekolahImage.src}
+                                        alt="Gedung SMA Insan Cendekia"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#123C69]/80 via-transparent to-transparent opacity-60"></div>
+                                    <div className="absolute bottom-0 left-0 right-0 p-6 text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                        <h3 className="text-2xl font-bold mb-1 text-white shadow-sm">SMA Insan Cendekia</h3>
+                                        <p className="text-blue-100 text-sm font-medium">School of Leaders</p>
                                     </div>
                                 </div>
                             </div>
