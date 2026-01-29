@@ -16,6 +16,7 @@
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
     "@types/three": "^0.182.0",
+    "@vite-pwa/astro": "^1.2.0",
     "astro": "^5.16.15",
     "lucide-react": "^0.563.0",
     "maath": "^0.10.8",
@@ -23,6 +24,7 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "tailwindcss": "^4.1.18",
-    "three": "^0.182.0"
+    "three": "^0.182.0",
+    "workbox-window": "^7.4.0"
   }
 }
