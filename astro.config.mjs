@@ -14,24 +14,37 @@ export default defineConfig({
         name: 'Sekolah Web',
         short_name: 'SekolahWeb',
         description: 'Platform Sekolah Web Modern',
-        theme_color: '#ffffff',
+        theme_color: '#1e40af',
         background_color: '#ffffff',
         display: 'standalone',
         start_url: '/',
         scope: '/',
         orientation: 'portrait',
+        categories: ['education', 'school'],
         icons: [
           {
-            src: 'logo.png',
+            src: '/logo.png',
             sizes: '192x192',
             type: 'image/png',
-            purpose: 'any maskable'
+            purpose: 'any'
           },
           {
-            src: 'logo.png',
+            src: '/logo.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any maskable'
+            purpose: 'any'
+          },
+          {
+            src: '/logo.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'maskable'
+          },
+          {
+            src: '/logo.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
           }
         ]
       },
