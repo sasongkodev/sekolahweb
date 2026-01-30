@@ -94,6 +94,8 @@ const HomeCarousel = () => {
                         <img
                             src={slide.image}
                             alt={slide.highlight}
+                            fetchPriority={index === 0 ? "high" : "low"}
+                            loading={index === 0 ? "eager" : "lazy"}
                             className={`h-full w-full object-cover object-center transform transition-transform duration-[10000ms] ease-linear ${index === currentSlide ? "scale-110" : "scale-100"
                                 }`}
                         />

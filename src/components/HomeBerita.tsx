@@ -57,6 +57,8 @@ const HomeBerita: React.FC<HomeBeritaProps> = ({ posts }) => {
                                     <img
                                         src={post.data.image}
                                         alt={post.data.title}
+                                        loading="lazy"
+                                        fetchPriority="low"
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                     />
                                 ) : (

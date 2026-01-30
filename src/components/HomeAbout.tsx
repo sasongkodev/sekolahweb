@@ -20,6 +20,8 @@ const HomeAbout = () => {
                                     <img
                                         src={sekolahImage.src}
                                         alt="Gedung SMA Insan Cendekia"
+                                        loading="lazy"
+                                        fetchPriority="low"
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#123C69]/80 via-transparent to-transparent opacity-60"></div>
